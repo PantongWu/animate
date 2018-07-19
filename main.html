@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>CSS3 animate 动画库</title>
+    <link rel="icon" type="image/x-icon" href="./animate.png">
+    <!-- css stylesheet main -->
+    <link rel="stylesheet" type="text/css" href="./main.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- cubic-bezier -->
+        <button class="cubic-bezier animate_line_fade bounce" name="0.52, 1.7, 0.5, 0.4">反弹贝塞尔曲线值</button>
+        <!-- 阴影变化 -->
+        <h3 class="title">阴影变化</h3>
+        <button class="btn animate_shadow">shadow</button>
+        <button class="btn animate_shadow_in">shadow-in</button>
+        <!-- 边框变化 -->
+        <h3 class="title">边框变化</h3>
+        <button class="btn animate_border">border</button>
+        <button class="btn animate_border_in">border-in</button>
+        <!-- 位置变化 -->
+        <h3 class="title">位置变化</h3>
+        <button class="btn animate_t">top</button>
+        <button class="btn animate_r">Right</button>
+        <button class="btn animate_b">Bottom</button>
+        <button class="btn animate_l">Left</button>
+        <!-- 线条变化 -->
+        <h3 class="title">线条变化</h3>
+        <button class="btn animate_line_fade">line-fade</button>
+        <button class="btn animate_line_fade_r">line-fade-r</button>
+        <button class="btn animate_line_fade_l">line-fade-c</button>
+        <br>
+        <button class="btn animate_line_fade bounce">line-bounce-fade</button>
+        <button class="btn animate_line_fade_r bounce">line-bounce-fade-r</button>
+        <button class="btn animate_line_fade_l bounce">line-bounce-fade-c</button>
+        <!-- 背景变化 -->
+        <h3 class="title">背景变化</h3>
+        <button class="btn animate_background_fade">background-fade-in</button>
+        <button class="btn animate_background_fade_u">background-fade-up</button>
+        <button class="btn animate_background_fade_t">background-fade-t</button>
+        <button class="btn animate_background_fade_r">background-fade-r</button>
+        <button class="btn animate_background_fade_b">background-fade-b</button>
+        <button class="btn animate_background_fade_l">background-fade-l</button>
+        <br>
+        <button class="btn animate_background_fade bounce">background-bounce-in</button>
+        <button class="btn animate_background_fade_u bounce">background-bounce-up</button>
+        <button class="btn animate_background_fade_t bounce">background-bounce-t</button>
+        <button class="btn animate_background_fade_r bounce">background-bounce-r</button>
+        <button class="btn animate_background_fade_b bounce">background-bounce-b</button>
+        <button class="btn animate_background_fade_l bounce">background-bounce-l</button>
+    </div>
+    <!-- 复制 动画名称 -->
+    <script type="text/javascript">
+    (function() {
+        'use strict';
+        let _ele = document.getElementsByClassName('btn'),
+            _cubicBezier = document.getElementsByClassName('cubic-bezier')[0];
+
+        _cubicBezier.addEventListener('click', function() {
+            let _cubicBezierData = _cubicBezier.name;
+            prompt('反弹贝塞尔曲线：', 'cubic-bezier(' + _cubicBezierData + ')')
+        }, false);
+
+        for (let i = 0; i < _ele.length; i++) {
+            _ele[i].addEventListener('click', function() {
+                let _eleClassName = _ele[i].className;
+                prompt('ClassName：', _eleClassName);
+            }, false);
+        }
+    })();
+    </script>
+</body>
+
+</html>

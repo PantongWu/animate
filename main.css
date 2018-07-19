@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f9;
+
+    overflow: hidden;
+}
+.container {
+    padding: 10px;
+    text-align: center;
+
+    overflow-y: auto;
+}
+.title {
+    margin: 10px;
+
+    font-weight: normal;
+    font-family: "Microsoft YaHei";
+}
+.btn,
+.cubic-bezier {
+    min-width: 85px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px 15px;
+
+    outline: none;
+    cursor: pointer;
+    background-color: #f8f8f9;
+    border: 1px solid #2d8cf0;
+
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Consolas";
+}
+.animate_t,
+.animate_r,
+.animate_b,
+.animate_l {
+    transition: transform .3s ease-in-out;
+}
+.animate_t:hover {
+    transform: translate3d(0, -10px, 0);
+}
+.animate_r:hover {
+    transform: translate3d(10px, 0, 0);
+}
+.animate_b:hover {
+    transform: translate3d(0, 10px, 0);
+}
+.animate_l:hover {
+    transform: translate3d(-10px, 0, 0);
+}
+.animate_border,
+.animate_border_in {
+    transition: box-shadow .3s ease-in;
+}
+.animate_border:hover {
+    box-shadow: 0 0 0 4px #2d8cf0, 0 0 1px transparent;
+}
+.animate_border_in:hover {
+    box-shadow: inset 0 0 0 4px #2d8cf0, 0 0 1px transparent;
+}
+button[class*="animate_shadow"] {
+    color: #fff;
+    border: none;
+    background-color: rgba(45, 140, 240, .8);
+
+    transition: box-shadow .3s linear;
+}
+.animate_shadow:hover {
+    box-shadow: 0 0 10px rgba(45, 140, 240, 1);
+}
+.animate_shadow_in:hover {
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 1);
+}
+button[class*="animate_background"] {
+    position: relative;
+    z-index: 1;
+
+    transition: color .3s linear;
+}
+button[class*="animate_background_fade"]:before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(45, 140, 240, .8);
+
+    transition: transform .3s ease-in-out;
+}
+.bounce:before {
+    transition: transform .3s cubic-bezier(0.52, 1.7, 0.5, 0.4) !important;
+}
+button[class*="animate_background_fade"]:hover {
+    color: #fff;
+}
+.animate_background_fade:before {
+    left: 0;
+    bottom: 0;
+
+    transform-origin: center;
+    transform: scaleY(0);
+}
+.animate_background_fade_u:before {
+    left: 0;
+    bottom: 0;
+
+    transform-origin: center;
+    transform: scaleX(0);
+}
+.animate_background_fade_t:before {
+    left: 0;
+    bottom: 0;
+
+    transform-origin: left top 0;
+    transform: scaleY(0);
+}
+.animate_background_fade_r:before {
+    right: 0;
+    bottom: 0;
+
+    transform-origin: right top 0;
+    transform: scaleX(0);
+}
+.animate_background_fade_b:before {
+    left: 0;
+    bottom: 0;
+
+    transform-origin: left bottom 0;
+    transform: scaleY(0);
+}
+.animate_background_fade_l:before {
+    top: 0;
+    left: 0;
+
+    transform-origin: left top 0;
+    transform: scaleX(0);
+}
+.animate_background_fade:hover:before,
+.animate_background_fade_t:hover:before,
+.animate_background_fade_b:hover:before {
+    transform: scaleY(1);
+}
+.animate_background_fade_u:hover:before,
+.animate_background_fade_r:hover:before,
+.animate_background_fade_l:hover:before {
+    transform: scaleX(1);
+}
+button[class*="animate_line_fade"] {
+    position: relative;
+    z-index: 1;
+}
+button[class*="animate_line_fade"]:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+
+    width: 100%;
+    height: 2px;
+    background-color: rgba(45, 140, 240, 1);
+
+    transform: scaleX(0);
+
+    transition: transform .3s linear;
+}
+.animate_line_fade:before {
+    left: 0;
+    bottom: 0;
+
+    transform-origin: center;
+}
+.animate_line_fade_r:before {
+    left: 0;
+    bottom: 0;
+
+    transform-origin: right bottom 0;
+}
+.animate_line_fade_l:before {
+    left: 0;
+    bottom: 0;
+
+    transform-origin: left bottom 0;
+}
+.animate_line_fade:hover:before,
+.animate_line_fade_r:hover:before,
+.animate_line_fade_l:hover:before {
+    transform: scaleX(1);
+}
